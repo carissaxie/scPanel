@@ -1,0 +1,63 @@
+scpanel.utils_func
+==================
+
+.. py:module:: scpanel.utils_func
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   scpanel.utils_func.preprocess
+   scpanel.utils_func.get_X_y_from_ann
+   scpanel.utils_func.check_nonnegative_integers
+   scpanel.utils_func.check_nonnegative_float
+   scpanel.utils_func.compute_cell_weight
+   scpanel.utils_func.downsample_adata
+
+
+Module Contents
+---------------
+
+.. py:function:: preprocess(adata: object, integrated: bool = False, ct_col: Optional[str] = None, y_col: Optional[str] = None, pt_col: Optional[str] = None, class_map: Optional[Dict[str, int]] = None) -> anndata._core.anndata.AnnData
+
+   standardize input data
+
+   :param adata:
+   :type adata: object
+   :param integrated:
+   :type integrated: bool=False
+   :param ct_col:
+   :type ct_col: Optional[str]=None
+   :param y_col:
+   :type y_col: Optional[str]=None
+   :param pt_col:
+   :type pt_col: Optional[str]=None
+   :param class_map:
+   :type class_map: Optional[Dict[str, int]]=None
+
+   :rtype: AnnData
+
+
+.. py:function:: get_X_y_from_ann(adata: anndata._core.anndata.AnnData, return_adj: bool = False, n_neigh: int = 10) -> Union[Tuple[numpy.ndarray, pandas.core.arrays.categorical.Categorical], Tuple[numpy.ndarray, pandas.core.arrays.categorical.Categorical, scipy.sparse._csr.csr_matrix]]
+
+   :param adata:
+   :param return_adj:
+   :param n_neigh:
+
+
+.. py:function:: check_nonnegative_integers(X: Union[numpy.ndarray, scipy.sparse.spmatrix]) -> bool
+
+   Checks values of X to ensure it is count data
+
+
+.. py:function:: check_nonnegative_float(X: Union[numpy.ndarray, scipy.sparse.spmatrix]) -> bool
+
+   Checks values of X to ensure it is logcount data
+
+
+.. py:function:: compute_cell_weight(data: Union[anndata._core.anndata.AnnData, pandas.core.frame.DataFrame]) -> numpy.ndarray
+
+.. py:function:: downsample_adata(adata, downsample_size=4000, random_state=1)
+
