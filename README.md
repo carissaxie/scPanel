@@ -22,6 +22,10 @@ Specifically, patients are splitted into training and testing set. In the traini
 
 - Compatible with Scanpy/Anndata framework
 
+# Documentation
+Update (23/08/2024)
+Documentation has been initialized and will be updated with more details soon. Check out the [scPanel documentation](https://scpanel.readthedocs.io/en/latest/autoapi/scpanel/index.html).
+
 # Usage
 
 scPanel is mainly composed of three steps:
