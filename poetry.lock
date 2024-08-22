@@ -3145,34 +3145,6 @@ url = "https://download.pytorch.org/whl/cpu"
 reference = "pytorch_cpu"
 
 [[package]]
-name = "torch-cluster"
-version = "1.6.1+pt113cpu"
-description = "PyTorch Extension Library of Optimized Graph Cluster Algorithms"
-optional = false
-python-versions = ">=3.7"
-files = [
-    {file = "torch_cluster-1.6.1+pt113cpu-cp310-cp310-linux_x86_64.whl", hash = "sha256:a8e4123fc28dfefcd0feda0748d8e8f275c01679ba1e77c903116feb6e247d7f"},
-    {file = "torch_cluster-1.6.1+pt113cpu-cp310-cp310-win_amd64.whl", hash = "sha256:5ea5c851a8e0b69d79f561bd18dadaaca352d54676f33af94d5c9ed3e75886e9"},
-    {file = "torch_cluster-1.6.1+pt113cpu-cp37-cp37m-linux_x86_64.whl", hash = "sha256:5dfb87b87fcc87199b7262c86369e4524beb44b5715425605555d9e561e3a638"},
-    {file = "torch_cluster-1.6.1+pt113cpu-cp37-cp37m-win_amd64.whl", hash = "sha256:17f8dee7cb31370d47635982aa36b92697299bd1deefa85eb87e70bfe674b5bf"},
-    {file = "torch_cluster-1.6.1+pt113cpu-cp38-cp38-linux_x86_64.whl", hash = "sha256:20f68889c5af2486deb37b6678a7b46c1b1a557213e1e2f6b7ccc102c16382ae"},
-    {file = "torch_cluster-1.6.1+pt113cpu-cp38-cp38-win_amd64.whl", hash = "sha256:8557fae693ad4c6e49073ee596718eb0e9b3f04c6ebb8ecc4fe0aee6730c9698"},
-    {file = "torch_cluster-1.6.1+pt113cpu-cp39-cp39-linux_x86_64.whl", hash = "sha256:af6affd6f3d2a079d96a0b7a2e840f952a973f4cb70e2343d898a23659ef5f47"},
-    {file = "torch_cluster-1.6.1+pt113cpu-cp39-cp39-win_amd64.whl", hash = "sha256:2cbbed89007e9cbb72da6afbd0ee0743450d0529c169e93b1e6b9422eece3bad"},
-]
-
-[package.dependencies]
-scipy = "*"
-
-[package.extras]
-test = ["pytest", "pytest-cov"]
-
-[package.source]
-type = "legacy"
-url = "https://data.pyg.org/whl/torch-1.13.0+cpu.html"
-reference = "torch-wheels"
-
-[[package]]
 name = "torch-geometric"
 version = "2.5.3"
 description = "Graph Neural Network Library for PyTorch"
@@ -3247,31 +3219,6 @@ files = [
 
 [package.dependencies]
 scipy = "*"
-
-[package.extras]
-test = ["pytest", "pytest-cov"]
-
-[package.source]
-type = "legacy"
-url = "https://data.pyg.org/whl/torch-1.13.0+cpu.html"
-reference = "torch-wheels"
-
-[[package]]
-name = "torch-spline-conv"
-version = "1.2.2+pt113cpu"
-description = "Implementation of the Spline-Based Convolution Operator of SplineCNN in PyTorch"
-optional = false
-python-versions = ">=3.7"
-files = [
-    {file = "torch_spline_conv-1.2.2+pt113cpu-cp310-cp310-linux_x86_64.whl", hash = "sha256:a824cdcb86c1ebcfc35903df9ba7bd274dee89634375f73d9372208e475187bd"},
-    {file = "torch_spline_conv-1.2.2+pt113cpu-cp310-cp310-win_amd64.whl", hash = "sha256:61e79b9ec94cec62add5f87756ce24ca3975b504d56d2ea0bf43b353691c0d0d"},
-    {file = "torch_spline_conv-1.2.2+pt113cpu-cp37-cp37m-linux_x86_64.whl", hash = "sha256:ef929fb041e81c0127b8a29f70fe6fc9f401af494b02b583399a202bc17bba4b"},
-    {file = "torch_spline_conv-1.2.2+pt113cpu-cp37-cp37m-win_amd64.whl", hash = "sha256:d6d371536949e065713b11fd39434b5d51663f1678aebe26442ad2b9e7c4ac53"},
-    {file = "torch_spline_conv-1.2.2+pt113cpu-cp38-cp38-linux_x86_64.whl", hash = "sha256:c0f84b7ab1dae38e6670f72481df2e1a8fefdc172b6ebd546a82dd9a7fedb197"},
-    {file = "torch_spline_conv-1.2.2+pt113cpu-cp38-cp38-win_amd64.whl", hash = "sha256:026c1fcadf3507b3fd4f84565fb7b6ce2ae0b144b200c1fd809cbe5865f3c8be"},
-    {file = "torch_spline_conv-1.2.2+pt113cpu-cp39-cp39-linux_x86_64.whl", hash = "sha256:a35e135606e209f3617c1489ac594a3d3868b64dbfd710b8c17615dd47ad7e07"},
-    {file = "torch_spline_conv-1.2.2+pt113cpu-cp39-cp39-win_amd64.whl", hash = "sha256:f639d897013717ac1841d19c93d75894d583ce2fd0f502c5f70e54a17343209f"},
-]
 
 [package.extras]
 test = ["pytest", "pytest-cov"]
@@ -3531,4 +3478,4 @@ test = ["big-O", "importlib-resources", "jaraco.functools", "jaraco.itertools", 
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "86c30cd1d3e821d0094a340d12bd30f5e714f6c42de2c6a692d7d945627ca4af"
+content-hash = "6790a27318babddf60918f94e9831f04411ec6f69b3beb868419eca98c54047c"
