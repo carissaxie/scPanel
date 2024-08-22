@@ -41,6 +41,15 @@ isort = "^5.13.2"
 pytest = "^8.3.2"
 hypothesis = "^6.111.1"
 
+
+[tool.poetry.group.doc.dependencies]
+sphinx = "7.4.7"
+sphinx-autobuild = "2024.2.4"
+myst-parser = "3.0.0"
+nbsphinx = "^0.9.5"
+sphinx-autoapi = "^3.2.1"
+sphinx-rtd-theme = "^2.0.0"
+
 [tool.isort]
 profile = "black"
 known_third_party = []
