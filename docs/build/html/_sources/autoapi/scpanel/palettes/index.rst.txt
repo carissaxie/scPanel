@@ -1,0 +1,67 @@
+scpanel.palettes
+================
+
+.. py:module:: scpanel.palettes
+
+.. autoapi-nested-parse::
+
+   Color palettes in addition to matplotlib's palettes.
+
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   scpanel.palettes.tab10
+   scpanel.palettes.vega_10
+   scpanel.palettes.vega_10_scanpy
+   scpanel.palettes.vega_20
+   scpanel.palettes.vega_20_scanpy
+   scpanel.palettes.default_20
+   scpanel.palettes.zeileis_28
+   scpanel.palettes.default_28
+   scpanel.palettes.godsnot_102
+   scpanel.palettes.default_102
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   scpanel.palettes._plot_color_cycle
+
+
+Module Contents
+---------------
+
+.. py:data:: tab10
+   :value: ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd', '#8c564b', '#e377c2', '#7f7f7f',...
+
+
+.. py:data:: vega_10
+
+.. py:data:: vega_10_scanpy
+
+.. py:data:: vega_20
+
+.. py:data:: vega_20_scanpy
+
+.. py:data:: default_20
+
+.. py:data:: zeileis_28
+   :value: ['#023fa5', '#7d87b9', '#bec1d4', '#d6bcc0', '#bb7784', '#8e063b', '#4a6fe3', '#8595e1',...
+
+
+.. py:data:: default_28
+
+.. py:data:: godsnot_102
+   :value: ['#FFFF00', '#1CE6FF', '#FF34FF', '#FF4A46', '#008941', '#006FA6', '#A30059', '#FFDBE5',...
+
+
+.. py:data:: default_102
+
+.. py:function:: _plot_color_cycle(clists: Mapping[str, Sequence[str]])
+
