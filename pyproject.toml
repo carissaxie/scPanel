@@ -17,8 +17,6 @@ torch = {version = "1.13.0+cpu", source = "pytorch_cpu"}
 torch-geometric = "^2.5.3"
 torch-scatter = {version = "^2.1.1+pt113cpu", source = "torch-wheels"}
 torch-sparse = {version = "^0.6.17+pt113cpu", source = "torch-wheels"}
-torch-cluster = {version = "^1.6.1+pt113cpu", source = "torch-wheels"}
-torch-spline-conv = {version = "^1.2.2+pt113cpu", source = "torch-wheels"}
 
 [[tool.poetry.source]]
 name = "pytorch_cpu"
