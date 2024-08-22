@@ -1,0 +1,34 @@
+scpanel.select_gene
+===================
+
+.. py:module:: scpanel.select_gene
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   scpanel.select_gene.split_n_folds
+   scpanel.select_gene.gene_score
+   scpanel.select_gene.plot_gene_score
+   scpanel.select_gene.decide_k
+   scpanel.select_gene.select_gene
+   scpanel.select_gene.select_gene_stable
+
+
+Module Contents
+---------------
+
+.. py:function:: split_n_folds(adata_train: anndata._core.anndata.AnnData, nfold: int, out_dir: Optional[str] = None, random_state: int = 2349) -> Tuple[List[List[int]], List[List[int]], List[List[float]]]
+
+.. py:function:: gene_score(adata_train: anndata._core.anndata.AnnData, train_index_list: List[List[int]], val_index_list: List[List[int]], sample_weight_list: List[List[float]], out_dir: str, ncpus: int, step: float = 0.03, metric: str = 'average_precision', verbose: bool = False) -> Tuple[anndata._core.anndata.AnnData, scpanel.SVMRFECV.RFECV]
+
+.. py:function:: plot_gene_score(adata_train: anndata._core.anndata.AnnData, n_genes_plot: int = 200, width: int = 5, height: int = 4, k: Optional[int] = None) -> matplotlib.axes._axes.Axes
+
+.. py:function:: decide_k(adata_train: anndata._core.anndata.AnnData, n_genes_plot: int = 100) -> int
+
+.. py:function:: select_gene(adata_train: anndata._core.anndata.AnnData, out_dir: Optional[str] = None, step: float = 0.03, top_n_feat: int = 5, n_genes_plot: int = 100, verbose: int = 0) -> anndata._core.anndata.AnnData
+
+.. py:function:: select_gene_stable(adata_train, n_iter=20, nfold=2, downsample_prop_list=[0.6, 0.8], num_cores=1, out_dir=None)
+

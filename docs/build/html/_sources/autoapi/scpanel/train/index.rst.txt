@@ -1,0 +1,102 @@
+scpanel.train
+=============
+
+.. py:module:: scpanel.train
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   scpanel.train.transform_adata
+   scpanel.train.models_train
+   scpanel.train.models_predict
+   scpanel.train.models_score
+   scpanel.train.cal_sample_auc
+   scpanel.train.auc_pvalue
+   scpanel.train.pt_pred
+   scpanel.train.pt_score
+   scpanel.train._panel_grid
+   scpanel.train.plot_roc_curve
+   scpanel.train.convert_pvalue_to_asterisks
+   scpanel.train.plot_violin
+   scpanel.train.make_single_spider
+
+
+Module Contents
+---------------
+
+.. py:function:: transform_adata(adata_train: anndata._core.anndata.AnnData, adata_test_dict: Dict[str, anndata._core.anndata.AnnData], selected_gene: Optional[List[str]] = None) -> Tuple[anndata._core.anndata.AnnData, anndata._core.anndata.AnnData]
+
+.. py:function:: models_train(adata_train_final: anndata._core.anndata.AnnData, search_grid: bool, out_dir: Optional[str] = None, param_grid: Optional[Dict[str, Dict[str, int]]] = None) -> List[Union[Tuple[str, sklearn.linear_model._logistic.LogisticRegression], Tuple[str, sklearn.ensemble._forest.RandomForestClassifier], Tuple[str, sklearn.svm._classes.SVC], Tuple[str, sklearn.neighbors._classification.KNeighborsClassifier], Tuple[str, scpanel.GATclassifier.GATclassifier]]]
+
+.. py:function:: models_predict(clfs: List[Union[Tuple[str, sklearn.linear_model._logistic.LogisticRegression], Tuple[str, sklearn.ensemble._forest.RandomForestClassifier], Tuple[str, sklearn.svm._classes.SVC], Tuple[str, sklearn.neighbors._classification.KNeighborsClassifier], Tuple[str, scpanel.GATclassifier.GATclassifier]]], adata_test_final: anndata._core.anndata.AnnData, out_dir: Optional[str] = None) -> Tuple[anndata._core.anndata.AnnData, List[Union[Tuple[str, numpy.ndarray], Tuple[str, torch.Tensor]]], List[Tuple[str, numpy.ndarray]]]
+
+.. py:function:: models_score(adata_test_final, y_pred_list, y_pred_score_list, out_dir=None)
+
+.. py:function:: cal_sample_auc(df: pandas.core.frame.DataFrame, score_col: str) -> numpy.float64
+
+.. py:function:: auc_pvalue(row: pandas.core.series.Series) -> float
+
+.. py:function:: pt_pred(adata_test_final: anndata._core.anndata.AnnData, cell_pred_col: str = 'median_pred_score', num_bootstrap: Optional[int] = None) -> anndata._core.anndata.AnnData
+
+.. py:function:: pt_score(adata_test_final: anndata._core.anndata.AnnData, cell_pred_col: str = 'median_pred_score') -> anndata._core.anndata.AnnData
+
+.. py:function:: _panel_grid(hspace: float, wspace: float, ncols: int, num_panels: int) -> Tuple[matplotlib.figure.Figure, matplotlib.gridspec.GridSpec]
+
+.. py:function:: plot_roc_curve(adata_test_final: anndata._core.anndata.AnnData, sample_id: pandas.core.series.Series, cell_pred_col: str, ncols: int = 4, hspace: float = 0.25, wspace: None = None, ax: None = None, scatter_kws: Optional[Dict[str, int]] = None, legend_kws: Optional[Dict[str, Dict[str, int]]] = None) -> List[matplotlib.axes._axes.Axes]
+
+   :param - adata_test_final:
+   :type - adata_test_final: AnnData,
+   :param - sample_id:
+   :type - sample_id: str | Sequence,
+   :param - cell_pred_col:
+   :type - cell_pred_col: str = 'median_pred_score',
+   :param - ncols:
+   :type - ncols: int = 4,
+   :param - hspace:
+   :type - hspace: float =0.25,
+   :param - wspace:
+   :type - wspace: float | None = None,
+   :param - ax:
+   :type - ax: Axes | None = None,
+   :param - scatter_kws:
+   :type - scatter_kws: dict | None = None, Arguments to pass to matplotlib.pyplot.scatter()
+
+   :rtype: Axes
+
+   .. rubric:: Examples
+
+   plot_roc_curve(adata_test_final,
+              sample_id = ['C3','C6','H1'],
+              cell_pred_col = 'median_pred_score',
+              scatter_kws={'s':10})
+
+
+.. py:function:: convert_pvalue_to_asterisks(pvalue: float) -> str
+
+.. py:function:: plot_violin(adata: anndata._core.anndata.AnnData, cell_pred_col: str = 'median_pred_score', dot_size: int = 2, ax: Optional[matplotlib.axes._axes.Axes] = None, palette: Optional[Dict[str, str]] = None, xticklabels_color: bool = False, text_kws: Dict[Any, Any] = {}) -> matplotlib.axes._axes.Axes
+
+   Violin Plots for cell-level prediction probabilities in each sample.
+
+   Parameters:
+   - adata: AnnData Object
+
+   - cell_pred_col: string, name of the column with cell-level prediction probabilities
+   in adata.obs (default: 'median_pred_score')
+
+   - pt_stat: string, a test for the null hypothesis that the distribution of probabilities
+   in this sample is different from the population (default: 'perm')
+       Options:
+       - 'perm': permutation test
+       - 't-test': one-sample t-test
+
+   - fig_size: tuple, size of figure (default: (10, 3))
+   - dot_size: float, Radius of the markers in stripplot.
+
+   :returns: ax
+
+
+.. py:function:: make_single_spider(adata_test_final: anndata._core.anndata.AnnData, metric_idx: int, color: str, nrow: int, ncol: int) -> None
+

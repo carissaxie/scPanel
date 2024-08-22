@@ -1,0 +1,23 @@
+scpanel
+=======
+
+.. py:module:: scpanel
+
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   /autoapi/scpanel/GATclassifier/index
+   /autoapi/scpanel/SVMRFECV/index
+   /autoapi/scpanel/palettes/index
+   /autoapi/scpanel/select_cell/index
+   /autoapi/scpanel/select_gene/index
+   /autoapi/scpanel/settings/index
+   /autoapi/scpanel/split_patient/index
+   /autoapi/scpanel/train/index
+   /autoapi/scpanel/utils_func/index
+
+

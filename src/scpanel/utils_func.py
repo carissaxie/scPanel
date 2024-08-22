@@ -24,7 +24,7 @@ def preprocess(
     integrated: bool=False,
     ct_col: Optional[str]=None,
     y_col: Optional[str]=None,
-    pt_col: Optional[str]=None,,
+    pt_col: Optional[str]=None,
     class_map: Optional[Dict[str, int]]=None,
 ) -> AnnData:
     """standardize input data
@@ -35,7 +35,7 @@ def preprocess(
     integrated : bool=False
     ct_col : Optional[str]=None
     y_col : Optional[str]=None
-    pt_col : Optional[str]=None,
+    pt_col : Optional[str]=None
     class_map : Optional[Dict[str, int]]=None
 
     Returns

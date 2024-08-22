@@ -1,0 +1,19 @@
+scpanel.split_patient
+=====================
+
+.. py:module:: scpanel.split_patient
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   scpanel.split_patient.split_train_test
+
+
+Module Contents
+---------------
+
+.. py:function:: split_train_test(adata: anndata._core.anndata.AnnData, out_dir: str, min_cells: int = 20, min_samples: int = 3, test_pt_size: float = 0.2, random_state: int = 3467, verbose: int = 0) -> Tuple[Dict[str, anndata._core.anndata.AnnData], Dict[str, anndata._core.anndata.AnnData]]
+
