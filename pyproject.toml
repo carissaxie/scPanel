@@ -1,0 +1,50 @@
+[tool.poetry]
+name = "scpanel"
+version = "0.1.0"
+description = ""
+authors = ["carissaxie <yixie0822@outlook.com>"]
+readme = "README.md"
+packages = [{include = "scpanel", from = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+scanpy = "1.9.3"
+scikit-learn = "1.0.2"
+pandas = "2.0.3"
+packaging = "23.1"
+anndata = "^0.10.8"
+torch = {version = "1.13.0+cpu", source = "pytorch_cpu"}
+pyg-lib = {version = "^0.4.0+pt113cpu", source = "torch-wheels"}
+torch-scatter = {version = "^2.1.1+pt113cpu", source = "torch-wheels"}
+torch-sparse = {version = "^0.6.17+pt113cpu", source = "torch-wheels"}
+torch-cluster = {version = "^1.6.1+pt113cpu", source = "torch-wheels"}
+torch-spline-conv = {version = "^1.2.2+pt113cpu", source = "torch-wheels"}
+
+[[tool.poetry.source]]
+name = "pytorch_cpu"
+url = "https://download.pytorch.org/whl/cpu"
+priority = "explicit"
+
+
+[[tool.poetry.source]]
+name = "torch-wheels"
+url = "https://data.pyg.org/whl/torch-1.13.0+cpu.html"
+priority = "explicit"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.8.0"
+isort = "^5.13.2"
+
+
+[tool.poetry.group.test.dependencies]
+pytest = "^8.3.2"
+hypothesis = "^6.111.1"
+
+[tool.isort]
+profile = "black"
+known_third_party = []
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
