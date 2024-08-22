@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>scpanel.SVMRFECV &mdash; scPanel 0.1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=fd3f3429" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=01f34227"></script>
+        <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="scpanel.palettes" href="../palettes/index.html" />
+    <link rel="prev" title="scpanel.GATclassifier" href="../GATclassifier/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            scPanel
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">API Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">scpanel</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../GATclassifier/index.html">scpanel.GATclassifier</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">scpanel.SVMRFECV</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../palettes/index.html">scpanel.palettes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../select_cell/index.html">scpanel.select_cell</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../select_gene/index.html">scpanel.select_gene</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../settings/index.html">scpanel.settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../split_patient/index.html">scpanel.split_patient</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../train/index.html">scpanel.train</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../utils_func/index.html">scpanel.utils_func</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">scPanel</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">API Reference</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">scpanel</a></li>
+      <li class="breadcrumb-item active">scpanel.SVMRFECV</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/autoapi/scpanel/SVMRFECV/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-scpanel.SVMRFECV">
+<span id="scpanel-svmrfecv"></span><h1>scpanel.SVMRFECV<a class="headerlink" href="#module-scpanel.SVMRFECV" title="Link to this heading"></a></h1>
+<p>Recursive feature elimination for feature ranking</p>
+<section id="classes">
+<h2>Classes<a class="headerlink" href="#classes" title="Link to this heading"></a></h2>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#scpanel.SVMRFECV.RFE" title="scpanel.SVMRFECV.RFE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RFE</span></code></a></p></td>
+<td><p>Feature ranking with recursive feature elimination.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#scpanel.SVMRFECV.RFECV" title="scpanel.SVMRFECV.RFECV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RFECV</span></code></a></p></td>
+<td><p>Recursive feature elimination with cross-validation to select the number of features.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Link to this heading"></a></h2>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#scpanel.SVMRFECV._rfe_single_fit" title="scpanel.SVMRFECV._rfe_single_fit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_rfe_single_fit</span></code></a>(rfe, estimator, X, y, train_idx, ...)</p></td>
+<td><p>Return the score for a fit across one fold.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="scpanel.SVMRFECV._rfe_single_fit">
+<span class="sig-prename descclassname"><span class="pre">scpanel.SVMRFECV.</span></span><span class="sig-name descname"><span class="pre">_rfe_single_fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rfe</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">estimator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">train_idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val_idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scorer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scpanel.SVMRFECV._rfe_single_fit" title="Link to this definition"></a></dt>
+<dd><p>Return the score for a fit across one fold.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="scpanel.SVMRFECV.RFE">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">scpanel.SVMRFECV.</span></span><span class="sig-name descname"><span class="pre">RFE</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">estimator</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">sklearn.svm._classes.SVC</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_features_to_select</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">importance_getter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'auto'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scpanel.SVMRFECV.RFE" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-obj docutils literal notranslate"><span class="pre">sklearn.feature_selection._base.SelectorMixin</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">sklearn.base.MetaEstimatorMixin</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">sklearn.base.BaseEstimator</span></code></p>
+<p>Feature ranking with recursive feature elimination.
+Given an external estimator that assigns weights to features (e.g., the
+coefficients of a linear model), the goal of recursive feature elimination
+(RFE) is to select features by recursively considering smaller and smaller
+sets of features. First, the estimator is trained on the initial set of
+features and the importance of each feature is obtained either through
+any specific attribute or callable.
+Then, the least important features are pruned from current set of features.
+That procedure is recursively repeated on the pruned set until the desired
+number of features to select is eventually reached.
+Read more in the <span class="xref std std-ref">User Guide</span>.
+:param estimator: A supervised learning estimator with a <code class="docutils literal notranslate"><span class="pre">fit</span></code> method that provides</p>
+<blockquote>
+<div><p>information about feature importance
+(e.g. <cite>coef_</cite>, <cite>feature_importances_</cite>).</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>n_features_to_select</strong> (<em>int</em><em> or </em><em>float</em><em>, </em><em>default=None</em>) – <p>The number of features to select. If <cite>None</cite>, half of the features are
+selected. If integer, the parameter is the absolute number of features
+to select. If float between 0 and 1, it is the fraction of features to
+select.
+.. versionchanged:: 0.24</p>
+<blockquote>
+<div><p>Added float values for fractions.</p>
+</div></blockquote>
+</p></li>
+<li><p><strong>step</strong> (<em>int</em><em> or </em><em>float</em><em>, </em><em>default=1</em>) – If greater than or equal to 1, then <code class="docutils literal notranslate"><span class="pre">step</span></code> corresponds to the
+(integer) number of features to remove at each iteration.
+If within (0.0, 1.0), then <code class="docutils literal notranslate"><span class="pre">step</span></code> corresponds to the percentage
+(rounded down) of features to remove at each iteration.</p></li>
+<li><p><strong>verbose</strong> (<em>int</em><em>, </em><em>default=0</em>) – Controls verbosity of output.</p></li>
+<li><p><strong>importance_getter</strong> (<em>str</em><em> or </em><em>callable</em><em>, </em><em>default='auto'</em>) – If ‘auto’, uses the feature importance either through a <cite>coef_</cite>
+or <cite>feature_importances_</cite> attributes of estimator.
+Also accepts a string that specifies an attribute name/path
+for extracting feature importance (implemented with <cite>attrgetter</cite>).
+For example, give <cite>regressor_.coef_</cite> in case of
+<code class="xref py py-class docutils literal notranslate"><span class="pre">TransformedTargetRegressor</span></code>  or
+<cite>named_steps.clf.feature_importances_</cite> in case of
+class:<cite>~sklearn.pipeline.Pipeline</cite> with its last step named <cite>clf</cite>.
+If <cite>callable</cite>, overrides the default feature importance getter.
+The callable is passed with the fitted estimator and it should
+return importance for each feature.
+.. versionadded:: 0.24</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scpanel.SVMRFECV.RFE.classes_">
+<span class="sig-name descname"><span class="pre">classes_</span></span><a class="headerlink" href="#scpanel.SVMRFECV.RFE.classes_" title="Link to this definition"></a></dt>
+<dd><p>The classes labels. Only available when <cite>estimator</cite> is a classifier.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ndarray of shape (n_classes,)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scpanel.SVMRFECV.RFE.estimator_">
+<span class="sig-name descname"><span class="pre">estimator_</span></span><a class="headerlink" href="#scpanel.SVMRFECV.RFE.estimator_" title="Link to this definition"></a></dt>
+<dd><p>The fitted estimator used to select features.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">Estimator</span></code> instance</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scpanel.SVMRFECV.RFE.n_features_">
+<span class="sig-name descname"><span class="pre">n_features_</span></span><a class="headerlink" href="#scpanel.SVMRFECV.RFE.n_features_" title="Link to this definition"></a></dt>
+<dd><p>The number of selected features.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scpanel.SVMRFECV.RFE.n_features_in_">
+<span class="sig-name descname"><span class="pre">n_features_in_</span></span><a class="headerlink" href="#scpanel.SVMRFECV.RFE.n_features_in_" title="Link to this definition"></a></dt>
+<dd><p>Number of features seen during <span class="xref std std-term">fit</span>. Only defined if the
+underlying estimator exposes such an attribute when fit.
+.. versionadded:: 0.24</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scpanel.SVMRFECV.RFE.feature_names_in_">
+<span class="sig-name descname"><span class="pre">feature_names_in_</span></span><a class="headerlink" href="#scpanel.SVMRFECV.RFE.feature_names_in_" title="Link to this definition"></a></dt>
+<dd><p>Names of features seen during <span class="xref std std-term">fit</span>. Defined only when <cite>X</cite>
+has feature names that are all strings.
+.. versionadded:: 1.0</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ndarray of shape (<cite>n_features_in_</cite>,)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scpanel.SVMRFECV.RFE.ranking_">
+<span class="sig-name descname"><span class="pre">ranking_</span></span><a class="headerlink" href="#scpanel.SVMRFECV.RFE.ranking_" title="Link to this definition"></a></dt>
+<dd><p>The feature ranking, such that <code class="docutils literal notranslate"><span class="pre">ranking_[i]</span></code> corresponds to the
+ranking position of the i-th feature. Selected (i.e., estimated
+best) features are assigned rank 1.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ndarray of shape (n_features,)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scpanel.SVMRFECV.RFE.support_">
+<span class="sig-name descname"><span class="pre">support_</span></span><a class="headerlink" href="#scpanel.SVMRFECV.RFE.support_" title="Link to this definition"></a></dt>
+<dd><p>The mask of selected features.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ndarray of shape (n_features,)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="#scpanel.SVMRFECV.RFECV" title="scpanel.SVMRFECV.RFECV"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RFECV</span></code></a></dt><dd><p>Recursive feature elimination with built-in cross-validated selection of the best number of features.</p>
+</dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">SelectFromModel</span></code></dt><dd><p>Feature selection based on thresholds of importance weights.</p>
+</dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">SequentialFeatureSelector</span></code></dt><dd><p>Sequential cross-validation based feature selection. Does not rely on importance weights.</p>
+</dd>
+</dl>
+</div>
+<p class="rubric">Notes</p>
+<p>Allows NaN/Inf in the input if the underlying estimator does as well.</p>
+<p class="rubric">References</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id1" role="note">
+<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
+<p>Guyon, I., Weston, J., Barnhill, S., &amp; Vapnik, V., “Gene selection
+for cancer classification using support vector machines”,
+Mach. Learn., 46(1-3), 389–422, 2002.</p>
+</aside>
+</aside>
+<p class="rubric">Examples</p>
+<p>The following example shows how to retrieve the 5 most informative
+features in the Friedman #1 dataset.
+&gt;&gt;&gt; from sklearn.datasets import make_friedman1
+&gt;&gt;&gt; from sklearn.feature_selection import RFE
+&gt;&gt;&gt; from sklearn.svm import SVR
+&gt;&gt;&gt; X, y = make_friedman1(n_samples=50, n_features=10, random_state=0)
+&gt;&gt;&gt; estimator = SVR(kernel=”linear”)
+&gt;&gt;&gt; selector = RFE(estimator, n_features_to_select=5, step=1)
+&gt;&gt;&gt; selector = selector.fit(X, y)
+&gt;&gt;&gt; <a href="#id3"><span class="problematic" id="id4">selector.support_</span></a>
+array([ True,  True,  True,  True,  True, False, False, False, False,</p>
+<blockquote>
+<div><p>False])</p>
+</div></blockquote>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">selector</span><span class="o">.</span><span class="n">ranking_</span>
+<span class="go">array([1, 1, 1, 1, 1, 6, 4, 3, 2, 5])</span>
+</pre></div>
+</div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scpanel.SVMRFECV.RFE.estimator">
+<span class="sig-name descname"><span class="pre">estimator</span></span><a class="headerlink" href="#scpanel.SVMRFECV.RFE.estimator" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scpanel.SVMRFECV.RFE.n_features_to_select">
+<span class="sig-name descname"><span class="pre">n_features_to_select</span></span><a class="headerlink" href="#scpanel.SVMRFECV.RFE.n_features_to_select" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scpanel.SVMRFECV.RFE.step">
+<span class="sig-name descname"><span class="pre">step</span></span><a class="headerlink" href="#scpanel.SVMRFECV.RFE.step" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scpanel.SVMRFECV.RFE.importance_getter">
+<span class="sig-name descname"><span class="pre">importance_getter</span></span><a class="headerlink" href="#scpanel.SVMRFECV.RFE.importance_getter" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scpanel.SVMRFECV.RFE.verbose">
+<span class="sig-name descname"><span class="pre">verbose</span></span><a class="headerlink" href="#scpanel.SVMRFECV.RFE.verbose" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="scpanel.SVMRFECV.RFE._estimator_type">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">_estimator_type</span></span><a class="headerlink" href="#scpanel.SVMRFECV.RFE._estimator_type" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scpanel.SVMRFECV.RFE.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">fit_params</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#scpanel.SVMRFECV.RFE" title="scpanel.SVMRFECV.RFE"><span class="pre">RFE</span></a></span></span><a class="headerlink" href="#scpanel.SVMRFECV.RFE.fit" title="Link to this definition"></a></dt>
+<dd><p>Fit the RFE model and then the underlying estimator on the selected features.
+:param X: The training input samples.
+:type X: {array-like, sparse matrix} of shape (n_samples, n_features)
+:param y: The target values.
+:type y: array-like of shape (n_samples,)
+:param **fit_params: Additional parameters passed to the <cite>fit</cite> method of the underlying</p>
+<blockquote>
+<div><p>estimator.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>self</strong> – Fitted estimator.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scpanel.SVMRFECV.RFE._fit">
+<span class="sig-name descname"><span class="pre">_fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step_score</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">fit_params</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#scpanel.SVMRFECV.RFE" title="scpanel.SVMRFECV.RFE"><span class="pre">RFE</span></a></span></span><a class="headerlink" href="#scpanel.SVMRFECV.RFE._fit" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scpanel.SVMRFECV.RFE.predict">
+<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scpanel.SVMRFECV.RFE.predict" title="Link to this definition"></a></dt>
+<dd><p>Reduce X to the selected features and then predict using the underlying estimator.
+:param X: The input samples.
+:type X: array of shape [n_samples, n_features]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>y</strong> – The predicted target values.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>array of shape [n_samples]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scpanel.SVMRFECV.RFE.score">
+<span class="sig-name descname"><span class="pre">score</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">fit_params</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scpanel.SVMRFECV.RFE.score" title="Link to this definition"></a></dt>
+<dd><p>Reduce X to the selected features and return the score of the underlying estimator.
+:param X: The input samples.
+:type X: array of shape [n_samples, n_features]
+:param y: The target values.
+:type y: array of shape [n_samples]
+:param **fit_params: Parameters to pass to the <cite>score</cite> method of the underlying</p>
+<blockquote>
+<div><p>estimator.
+.. versionadded:: 1.0</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>score</strong> – Score of the underlying base estimator computed with the selected
+features returned by <cite>rfe.transform(X)</cite> and <cite>y</cite>.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scpanel.SVMRFECV.RFE._get_support_mask">
+<span class="sig-name descname"><span class="pre">_get_support_mask</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#scpanel.SVMRFECV.RFE._get_support_mask" title="Link to this definition"></a></dt>
+<dd><p>Get the boolean mask indicating which features are selected</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>support</strong> – An element is True iff its corresponding feature is selected for
+retention.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>boolean array of shape [# input features]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scpanel.SVMRFECV.RFE.decision_function">
+<span class="sig-name descname"><span class="pre">decision_function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scpanel.SVMRFECV.RFE.decision_function" title="Link to this definition"></a></dt>
+<dd><p>Compute the decision function of <code class="docutils literal notranslate"><span class="pre">X</span></code>.
+:param X: The input samples. Internally, it will be converted to</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">dtype=np.float32</span></code> and if a sparse matrix is provided
+to a sparse <code class="docutils literal notranslate"><span class="pre">csr_matrix</span></code>.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>score</strong> – The decision function of the input samples. The order of the
+classes corresponds to that in the attribute <span class="xref std std-term">classes_</span>.
+Regression and binary classification produce an array of shape
+[n_samples].</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>array, shape = [n_samples, n_classes] or [n_samples]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scpanel.SVMRFECV.RFE.predict_proba">
+<span class="sig-name descname"><span class="pre">predict_proba</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scpanel.SVMRFECV.RFE.predict_proba" title="Link to this definition"></a></dt>
+<dd><p>Predict class probabilities for X.
+:param X: The input samples. Internally, it will be converted to</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">dtype=np.float32</span></code> and if a sparse matrix is provided
+to a sparse <code class="docutils literal notranslate"><span class="pre">csr_matrix</span></code>.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p</strong> – The class probabilities of the input samples. The order of the
+classes corresponds to that in the attribute <span class="xref std std-term">classes_</span>.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>array of shape (n_samples, n_classes)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scpanel.SVMRFECV.RFE.predict_log_proba">
+<span class="sig-name descname"><span class="pre">predict_log_proba</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scpanel.SVMRFECV.RFE.predict_log_proba" title="Link to this definition"></a></dt>
+<dd><p>Predict class log-probabilities for X.
+:param X: The input samples.
+:type X: array of shape [n_samples, n_features]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>p</strong> – The class log-probabilities of the input samples. The order of the
+classes corresponds to that in the attribute <span class="xref std std-term">classes_</span>.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>array of shape (n_samples, n_classes)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scpanel.SVMRFECV.RFE._more_tags">
+<span class="sig-name descname"><span class="pre">_more_tags</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">bool</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#scpanel.SVMRFECV.RFE._more_tags" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="scpanel.SVMRFECV.RFECV">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">scpanel.SVMRFECV.</span></span><span class="sig-name descname"><span class="pre">RFECV</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">estimator</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">sklearn.svm._classes.SVC</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">step</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_features_to_select</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scoring</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_jobs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">importance_getter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'auto'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scpanel.SVMRFECV.RFECV" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#scpanel.SVMRFECV.RFE" title="scpanel.SVMRFECV.RFE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RFE</span></code></a></p>
+<p>Recursive feature elimination with cross-validation to select the number of features.
+See glossary entry for <span class="xref std std-term">cross-validation estimator</span>.
+Read more in the <span class="xref std std-ref">User Guide</span>.
+:param estimator: A supervised learning estimator with a <code class="docutils literal notranslate"><span class="pre">fit</span></code> method that provides</p>
+<blockquote>
+<div><p>information about feature importance either through a <code class="docutils literal notranslate"><span class="pre">coef_</span></code>
+attribute or through a <code class="docutils literal notranslate"><span class="pre">feature_importances_</span></code> attribute.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>step</strong> (<em>int</em><em> or </em><em>float</em><em>, </em><em>default=1</em>) – If greater than or equal to 1, then <code class="docutils literal notranslate"><span class="pre">step</span></code> corresponds to the
+(integer) number of features to remove at each iteration.
+If within (0.0, 1.0), then <code class="docutils literal notranslate"><span class="pre">step</span></code> corresponds to the percentage
+(rounded down) of features to remove at each iteration.
+Note that the last iteration may remove fewer than <code class="docutils literal notranslate"><span class="pre">step</span></code> features in
+order to reach <code class="docutils literal notranslate"><span class="pre">min_features_to_select</span></code>.</p></li>
+<li><p><strong>min_features_to_select</strong> (<em>int</em><em>, </em><em>default=1</em>) – The minimum number of features to be selected. This number of features
+will always be scored, even if the difference between the original
+feature count and <code class="docutils literal notranslate"><span class="pre">min_features_to_select</span></code> isn’t divisible by
+<code class="docutils literal notranslate"><span class="pre">step</span></code>.
+.. versionadded:: 0.20</p></li>
+<li><p><strong>cv</strong> (<em>int</em><em>, </em><em>cross-validation generator</em><em> or </em><em>an iterable</em><em>, </em><em>default=None</em>) – <p>Determines the cross-validation splitting strategy.
+Possible inputs for cv are:
+- None, to use the default 5-fold cross-validation,
+- integer, to specify the number of folds.
+- <span class="xref std std-term">CV splitter</span>,
+- An iterable yielding (train, test) splits as arrays of indices.
+For integer/None inputs, if <code class="docutils literal notranslate"><span class="pre">y</span></code> is binary or multiclass,
+<code class="xref py py-class docutils literal notranslate"><span class="pre">StratifiedKFold</span></code> is used. If the
+estimator is a classifier or if <code class="docutils literal notranslate"><span class="pre">y</span></code> is neither binary nor multiclass,
+<code class="xref py py-class docutils literal notranslate"><span class="pre">KFold</span></code> is used.
+Refer <span class="xref std std-ref">User Guide</span> for the various
+cross-validation strategies that can be used here.
+.. versionchanged:: 0.22</p>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">cv</span></code> default value of None changed from 3-fold to 5-fold.</p>
+</div></blockquote>
+</p></li>
+<li><p><strong>scoring</strong> (<em>str</em><em>, </em><em>callable</em><em> or </em><em>None</em><em>, </em><em>default=None</em>) – A string (see model evaluation documentation) or
+a scorer callable object / function with signature
+<code class="docutils literal notranslate"><span class="pre">scorer(estimator,</span> <span class="pre">X,</span> <span class="pre">y)</span></code>.</p></li>
+<li><p><strong>verbose</strong> (<em>int</em><em>, </em><em>default=0</em>) – Controls verbosity of output.</p></li>
+<li><p><strong>n_jobs</strong> (<em>int</em><em> or </em><em>None</em><em>, </em><em>default=None</em>) – Number of cores to run in parallel while fitting across folds.
+<code class="docutils literal notranslate"><span class="pre">None</span></code> means 1 unless in a <code class="xref py py-obj docutils literal notranslate"><span class="pre">joblib.parallel_backend</span></code> context.
+<code class="docutils literal notranslate"><span class="pre">-1</span></code> means using all processors. See <span class="xref std std-term">Glossary</span>
+for more details.
+.. versionadded:: 0.18</p></li>
+<li><p><strong>importance_getter</strong> (<em>str</em><em> or </em><em>callable</em><em>, </em><em>default='auto'</em>) – If ‘auto’, uses the feature importance either through a <cite>coef_</cite>
+or <cite>feature_importances_</cite> attributes of estimator.
+Also accepts a string that specifies an attribute name/path
+for extracting feature importance.
+For example, give <cite>regressor_.coef_</cite> in case of
+<code class="xref py py-class docutils literal notranslate"><span class="pre">TransformedTargetRegressor</span></code>  or
+<cite>named_steps.clf.feature_importances_</cite> in case of
+<code class="xref py py-class docutils literal notranslate"><span class="pre">Pipeline</span></code> with its last step named <cite>clf</cite>.
+If <cite>callable</cite>, overrides the default feature importance getter.
+The callable is passed with the fitted estimator and it should
+return importance for each feature.
+.. versionadded:: 0.24</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scpanel.SVMRFECV.RFECV.classes_">
+<span class="sig-name descname"><span class="pre">classes_</span></span><a class="headerlink" href="#scpanel.SVMRFECV.RFECV.classes_" title="Link to this definition"></a></dt>
+<dd><p>The classes labels. Only available when <cite>estimator</cite> is a classifier.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ndarray of shape (n_classes,)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scpanel.SVMRFECV.RFECV.estimator_">
+<span class="sig-name descname"><span class="pre">estimator_</span></span><a class="headerlink" href="#scpanel.SVMRFECV.RFECV.estimator_" title="Link to this definition"></a></dt>
+<dd><p>The fitted estimator used to select features.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">Estimator</span></code> instance</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scpanel.SVMRFECV.RFECV.grid_scores_">
+<span class="sig-name descname"><span class="pre">grid_scores_</span></span><a class="headerlink" href="#scpanel.SVMRFECV.RFECV.grid_scores_" title="Link to this definition"></a></dt>
+<dd><p>The cross-validation scores such that
+<code class="docutils literal notranslate"><span class="pre">grid_scores_[i]</span></code> corresponds to
+the CV score of the i-th subset of features.
+.. deprecated:: 1.0</p>
+<blockquote>
+<div><p>The <cite>grid_scores_</cite> attribute is deprecated in version 1.0 in favor
+of <cite>cv_results_</cite> and will be removed in version 1.2.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ndarray of shape (n_subsets_of_features,)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scpanel.SVMRFECV.RFECV.cv_results_">
+<span class="sig-name descname"><span class="pre">cv_results_</span></span><a class="headerlink" href="#scpanel.SVMRFECV.RFECV.cv_results_" title="Link to this definition"></a></dt>
+<dd><p>A dict with keys:
+split(k)_test_score : ndarray of shape (n_features,)</p>
+<blockquote>
+<div><p>The cross-validation scores across (k)th fold.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>mean_test_score<span class="classifier">ndarray of shape (n_features,)</span></dt><dd><p>Mean of scores over the folds.</p>
+</dd>
+<dt>std_test_score<span class="classifier">ndarray of shape (n_features,)</span></dt><dd><p>Standard deviation of scores over the folds.</p>
+</dd>
+</dl>
+<div class="versionadded">
+<p><span class="versionmodified added">Added in version 1.0.</span></p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict of ndarrays</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scpanel.SVMRFECV.RFECV.n_features_">
+<span class="sig-name descname"><span class="pre">n_features_</span></span><a class="headerlink" href="#scpanel.SVMRFECV.RFECV.n_features_" title="Link to this definition"></a></dt>
+<dd><p>The number of selected features with cross-validation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scpanel.SVMRFECV.RFECV.n_features_in_">
+<span class="sig-name descname"><span class="pre">n_features_in_</span></span><a class="headerlink" href="#scpanel.SVMRFECV.RFECV.n_features_in_" title="Link to this definition"></a></dt>
+<dd><p>Number of features seen during <span class="xref std std-term">fit</span>. Only defined if the
+underlying estimator exposes such an attribute when fit.
+.. versionadded:: 0.24</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scpanel.SVMRFECV.RFECV.feature_names_in_">
+<span class="sig-name descname"><span class="pre">feature_names_in_</span></span><a class="headerlink" href="#scpanel.SVMRFECV.RFECV.feature_names_in_" title="Link to this definition"></a></dt>
+<dd><p>Names of features seen during <span class="xref std std-term">fit</span>. Defined only when <cite>X</cite>
+has feature names that are all strings.
+.. versionadded:: 1.0</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ndarray of shape (<cite>n_features_in_</cite>,)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scpanel.SVMRFECV.RFECV.ranking_">
+<span class="sig-name descname"><span class="pre">ranking_</span></span><a class="headerlink" href="#scpanel.SVMRFECV.RFECV.ranking_" title="Link to this definition"></a></dt>
+<dd><p>The feature ranking, such that <cite>ranking_[i]</cite>
+corresponds to the ranking
+position of the i-th feature.
+Selected (i.e., estimated best)
+features are assigned rank 1.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>narray of shape (n_features,)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scpanel.SVMRFECV.RFECV.support_">
+<span class="sig-name descname"><span class="pre">support_</span></span><a class="headerlink" href="#scpanel.SVMRFECV.RFECV.support_" title="Link to this definition"></a></dt>
+<dd><p>The mask of selected features.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>ndarray of shape (n_features,)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="#scpanel.SVMRFECV.RFE" title="scpanel.SVMRFECV.RFE"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RFE</span></code></a></dt><dd><p>Recursive feature elimination.</p>
+</dd>
+</dl>
+</div>
+<p class="rubric">Notes</p>
+<p>The size of <code class="docutils literal notranslate"><span class="pre">grid_scores_</span></code> is equal to
+<code class="docutils literal notranslate"><span class="pre">ceil((n_features</span> <span class="pre">-</span> <span class="pre">min_features_to_select)</span> <span class="pre">/</span> <span class="pre">step)</span> <span class="pre">+</span> <span class="pre">1</span></code>,
+where step is the number of features removed at each iteration.
+Allows NaN/Inf in the input if the underlying estimator does as well.</p>
+<p class="rubric">References</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id2" role="note">
+<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
+<p>Guyon, I., Weston, J., Barnhill, S., &amp; Vapnik, V., “Gene selection
+for cancer classification using support vector machines”,
+Mach. Learn., 46(1-3), 389–422, 2002.</p>
+</aside>
+</aside>
+<p class="rubric">Examples</p>
+<p>The following example shows how to retrieve the a-priori not known 5
+informative features in the Friedman #1 dataset.
+&gt;&gt;&gt; from sklearn.datasets import make_friedman1
+&gt;&gt;&gt; from sklearn.feature_selection import RFECV
+&gt;&gt;&gt; from sklearn.svm import SVR
+&gt;&gt;&gt; X, y = make_friedman1(n_samples=50, n_features=10, random_state=0)
+&gt;&gt;&gt; estimator = SVR(kernel=”linear”)
+&gt;&gt;&gt; selector = RFECV(estimator, step=1, cv=5)
+&gt;&gt;&gt; selector = selector.fit(X, y)
+&gt;&gt;&gt; <a href="#id5"><span class="problematic" id="id6">selector.support_</span></a>
+array([ True,  True,  True,  True,  True, False, False, False, False,</p>
+<blockquote>
+<div><p>False])</p>
+</div></blockquote>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">selector</span><span class="o">.</span><span class="n">ranking_</span>
+<span class="go">array([1, 1, 1, 1, 1, 6, 4, 3, 2, 5])</span>
+</pre></div>
+</div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scpanel.SVMRFECV.RFECV.estimator">
+<span class="sig-name descname"><span class="pre">estimator</span></span><a class="headerlink" href="#scpanel.SVMRFECV.RFECV.estimator" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scpanel.SVMRFECV.RFECV.step">
+<span class="sig-name descname"><span class="pre">step</span></span><a class="headerlink" href="#scpanel.SVMRFECV.RFECV.step" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scpanel.SVMRFECV.RFECV.importance_getter">
+<span class="sig-name descname"><span class="pre">importance_getter</span></span><a class="headerlink" href="#scpanel.SVMRFECV.RFECV.importance_getter" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scpanel.SVMRFECV.RFECV.cv">
+<span class="sig-name descname"><span class="pre">cv</span></span><a class="headerlink" href="#scpanel.SVMRFECV.RFECV.cv" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scpanel.SVMRFECV.RFECV.scoring">
+<span class="sig-name descname"><span class="pre">scoring</span></span><a class="headerlink" href="#scpanel.SVMRFECV.RFECV.scoring" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scpanel.SVMRFECV.RFECV.verbose">
+<span class="sig-name descname"><span class="pre">verbose</span></span><a class="headerlink" href="#scpanel.SVMRFECV.RFECV.verbose" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scpanel.SVMRFECV.RFECV.n_jobs">
+<span class="sig-name descname"><span class="pre">n_jobs</span></span><a class="headerlink" href="#scpanel.SVMRFECV.RFECV.n_jobs" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="scpanel.SVMRFECV.RFECV.min_features_to_select">
+<span class="sig-name descname"><span class="pre">min_features_to_select</span></span><a class="headerlink" href="#scpanel.SVMRFECV.RFECV.min_features_to_select" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="scpanel.SVMRFECV.RFECV.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">train_idx_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">val_idx_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">groups</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sample_weight_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#scpanel.SVMRFECV.RFECV" title="scpanel.SVMRFECV.RFECV"><span class="pre">RFECV</span></a></span></span><a class="headerlink" href="#scpanel.SVMRFECV.RFECV.fit" title="Link to this definition"></a></dt>
+<dd><p>Fit the RFE model and automatically tune the number of selected features.
+:param X: Training vector, where <cite>n_samples</cite> is the number of samples and</p>
+<blockquote>
+<div><p><cite>n_features</cite> is the total number of features.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>y</strong> (<em>array-like</em><em> of </em><em>shape</em><em> (</em><em>n_samples</em><em>,</em><em>)</em>) – Target values (integers for classification, real numbers for
+regression).</p></li>
+<li><p><strong>groups</strong> (<em>array-like</em><em> of </em><em>shape</em><em> (</em><em>n_samples</em><em>,</em><em>) or </em><em>None</em><em>, </em><em>default=None</em>) – Group labels for the samples used while splitting the dataset into
+train/test set. Only used in conjunction with a “Group” <span class="xref std std-term">cv</span>
+instance (e.g., <code class="xref py py-class docutils literal notranslate"><span class="pre">GroupKFold</span></code>).
+.. versionadded:: 0.20</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>self</strong> – Fitted estimator.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="id0">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">grid_scores_</span></span><a class="headerlink" href="#id0" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../GATclassifier/index.html" class="btn btn-neutral float-left" title="scpanel.GATclassifier" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../palettes/index.html" class="btn btn-neutral float-right" title="scpanel.palettes" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Yi Carissa Xie.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+scpanel.select_cell
+===================
+
+.. py:module:: scpanel.select_cell
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   scpanel.select_cell.split_patients
+   scpanel.select_cell.cal_bootstrap_score
+   scpanel.select_cell.custom_metrics
+   scpanel.select_cell.cell_type_score
+   scpanel.select_cell.plot_cell_type_score
+   scpanel.select_cell.select_celltype
+
+
+Module Contents
+---------------
+
+.. py:function:: split_patients(adata: anndata._core.anndata.AnnData, test_pt_size: float, random_state: int, out_dir: str, verbose: bool) -> Tuple[anndata._core.anndata.AnnData, anndata._core.anndata.AnnData]
+
+.. py:function:: cal_bootstrap_score(adata: anndata._core.anndata.AnnData, out_dir: str, sample_n_cell: int, n_iterations: int = 100, n_threads: int = 16, show_progress: bool = True, verbose: bool = False) -> pandas.core.frame.DataFrame
+
+.. py:function:: custom_metrics(grouping: Tuple[str, pandas.core.frame.DataFrame], metric: str) -> Dict[str, numpy.float64]
+
+.. py:function:: cell_type_score(adata_train_dict: Dict[str, anndata._core.anndata.AnnData], out_dir: str, ncpus: int, sample_n_cell: int, n_iterations: int = 100, verbose: bool = False) -> Tuple[pandas.core.frame.DataFrame, pandas.core.frame.DataFrame]
+
+.. py:function:: plot_cell_type_score(AUC: pandas.core.frame.DataFrame, AUC_all: pandas.core.frame.DataFrame, width: int = 4, height: int = 5) -> matplotlib.axes._axes.Axes
+
+.. py:function:: select_celltype(adata_train_dict: Dict[str, anndata._core.anndata.AnnData], out_dir: str, celltype_selected: str) -> anndata._core.anndata.AnnData
+

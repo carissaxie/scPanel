@@ -1,0 +1,22 @@
+scpanel.settings
+================
+
+.. py:module:: scpanel.settings
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   scpanel.settings.set_rcParams
+
+
+Module Contents
+---------------
+
+.. py:function:: set_rcParams(fontsize=14, color_map=None)
+
+   Set default matplotlib.rcParams
+
+

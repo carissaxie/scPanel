@@ -1,0 +1,227 @@
+scpanel.GATclassifier
+=====================
+
+.. py:module:: scpanel.GATclassifier
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   scpanel.GATclassifier.seed
+
+
+Classes
+-------
+
+.. autoapisummary::
+
+   scpanel.GATclassifier.ClusterData
+   scpanel.GATclassifier.ClusterLoader
+   scpanel.GATclassifier.GAT
+   scpanel.GATclassifier.GATclassifier
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   scpanel.GATclassifier.scipysparse2torchsparse
+
+
+Module Contents
+---------------
+
+.. py:data:: seed
+   :value: 42
+
+
+.. py:function:: scipysparse2torchsparse(x: scipy.sparse._csr.csr_matrix) -> Tuple[torch.Tensor, torch.Tensor]
+
+   Input: scipy csr_matrix
+   Returns: torch tensor in experimental sparse format
+
+   REF: Code adatped from [PyTorch discussion forum](https://discuss.pytorch.org/t/better-way-to-forward-sparse-matrix/21915>)
+
+
+.. py:class:: ClusterData(data: torch_geometric.data.data.Data, num_parts: int, recursive: bool = False, save_dir: None = None)
+
+   Bases: :py:obj:`torch.utils.data.Dataset`
+
+
+   Clusters/partitions a graph data object into multiple subgraphs, as
+   motivated by the `"Cluster-GCN: An Efficient Algorithm for Training Deep
+   and Large Graph Convolutional Networks"
+   <https://arxiv.org/abs/1905.07953>`_ paper.
+
+   :param data: The graph data object.
+   :type data: torch_geometric.data.Data
+   :param num_parts: The number of partitions.
+   :type num_parts: int
+   :param recursive: If set to :obj:`True`, will use multilevel
+                     recursive bisection instead of multilevel k-way partitioning.
+                     (default: :obj:`False`)
+   :type recursive: bool, optional
+   :param save_dir: If set, will save the partitioned data to
+                    the :obj:`save_dir` directory for faster re-use.
+   :type save_dir: string, optional
+
+
+   .. py:attribute:: num_parts
+
+
+   .. py:attribute:: recursive
+
+
+   .. py:attribute:: save_dir
+
+
+   .. py:method:: process(data: torch_geometric.data.data.Data) -> None
+
+
+   .. py:method:: __len__() -> int
+
+
+   .. py:method:: __getitem__(idx)
+
+
+   .. py:method:: __repr__()
+
+      Return repr(self).
+
+
+
+.. py:class:: ClusterLoader(cluster_data: ClusterData, batch_size: int = 1, shuffle: bool = False, **kwargs)
+
+   Bases: :py:obj:`torch.utils.data.DataLoader`
+
+
+   The data loader scheme from the `"Cluster-GCN: An Efficient Algorithm
+   for Training Deep and Large Graph Convolutional Networks"
+   <https://arxiv.org/abs/1905.07953>`_ paper which merges partioned subgraphs
+   and their between-cluster links from a large-scale graph data object to
+   form a mini-batch.
+
+   :param cluster_data: The already
+                        partioned data object.
+   :type cluster_data: torch_geometric.data.ClusterData
+   :param batch_size: How many samples per batch to load.
+                      (default: :obj:`1`)
+   :type batch_size: int, optional
+   :param shuffle: If set to :obj:`True`, the data will be
+                   reshuffled at every epoch. (default: :obj:`False`)
+   :type shuffle: bool, optional
+
+
+.. py:class:: GAT(n_nodes: int, nFeatures: int, nHiddenUnits: int, nHeads: int, alpha: float, dropout: float)
+
+   Bases: :py:obj:`torch.nn.Module`
+
+
+   Base class for all neural network modules.
+
+   Your models should also subclass this class.
+
+   Modules can also contain other Modules, allowing to nest them in
+   a tree structure. You can assign the submodules as regular attributes::
+
+       import torch.nn as nn
+       import torch.nn.functional as F
+
+       class Model(nn.Module):
+           def __init__(self):
+               super().__init__()
+               self.conv1 = nn.Conv2d(1, 20, 5)
+               self.conv2 = nn.Conv2d(20, 20, 5)
+
+           def forward(self, x):
+               x = F.relu(self.conv1(x))
+               return F.relu(self.conv2(x))
+
+   Submodules assigned in this way will be registered, and will have their
+   parameters converted too when you call :meth:`to`, etc.
+
+   .. note::
+       As per the example above, an ``__init__()`` call to the parent class
+       must be made before assignment on the child.
+
+   :ivar training: Boolean represents whether this module is in training or
+                   evaluation mode.
+   :vartype training: bool
+
+
+   .. py:attribute:: n_nodes
+
+
+   .. py:attribute:: nFeatures
+
+
+   .. py:attribute:: nHiddenUnits
+
+
+   .. py:attribute:: nHeads
+
+
+   .. py:attribute:: alpha
+
+
+   .. py:attribute:: dropout
+
+
+   .. py:attribute:: gat1
+
+
+   .. py:attribute:: gat2
+
+
+   .. py:method:: forward(data: torch_geometric.data.data.Data) -> torch.Tensor
+
+
+.. py:class:: GATclassifier(n_nodes: int = 2, nFeatures: Optional[int] = None, nHiddenUnits: int = 8, nHeads: int = 8, alpha: float = 0.2, dropout: float = 0.4, clip: None = None, rs: int = random.randint(1, 1000000), LR: float = 0.001, WeightDecay: float = 0.0005, BatchSize: int = 256, NumParts: int = 200, nEpochs: int = 100, fastmode: bool = True, verbose: int = 0, device: str = 'cpu')
+
+   Bases: :py:obj:`sklearn.base.BaseEstimator`
+
+
+   A pytorch regressor
+
+
+   .. py:attribute:: _history
+      :value: None
+
+
+
+   .. py:attribute:: _model
+      :value: None
+
+
+
+   .. py:method:: _build_model() -> None
+
+
+   .. py:method:: _train_model(X: numpy.ndarray, y: pandas.core.arrays.categorical.Categorical, adj: scipy.sparse._csr.csr_matrix) -> None
+
+
+   .. py:method:: fit(X: numpy.ndarray, y: pandas.core.arrays.categorical.Categorical, adj: scipy.sparse._csr.csr_matrix) -> GATclassifier
+
+      Trains the pytorch regressor.
+
+
+
+   .. py:method:: predict(X: numpy.ndarray, y: pandas.core.arrays.categorical.Categorical, adj: scipy.sparse._csr.csr_matrix) -> torch.Tensor
+
+      Makes a prediction using the trained pytorch model
+
+
+
+   .. py:method:: predict_proba(X: numpy.ndarray, y: pandas.core.arrays.categorical.Categorical, adj: scipy.sparse._csr.csr_matrix) -> numpy.ndarray
+
+
+   .. py:method:: score(X, y, sample_weight=None)
+
+      Scores the data using the trained pytorch model. Under current implementation
+      returns negative mae.
+
+
+
