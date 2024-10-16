@@ -7,7 +7,7 @@ readme = "README.md"
 packages = [{include = "scpanel", from = "src"}]
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "3.10"
 scanpy = "1.9.3"
 scikit-learn = "1.0.2"
 pandas = "2.0.3"
@@ -17,8 +17,6 @@ torch = "1.13.0"
 torch-geometric = "^2.5.3"
 numpy = "1.24.4"
 seaborn = "0.12.2"
-torch-scatter = {version = "^2.1.1+pt113cpu", source = "torch-wheels"}
-torch-sparse = {version = "^0.6.17+pt113cpu", source = "torch-wheels"}
 
 
 [tool.poetry.group.dev.dependencies]
@@ -39,11 +37,6 @@ myst-parser = "3.0.0"
 nbsphinx = "^0.9.5"
 sphinx-autoapi = "^3.3.2"
 sphinx-rtd-theme = "^3.0.1"
-
-[[tool.poetry.source]]
-name = "torch-wheels"
-url = "https://data.pyg.org/whl/torch-1.13.0+cpu.html"
-priority = "supplemental"
 
 
 [tool.isort]
