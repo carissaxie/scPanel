@@ -1,0 +1,5 @@
+,healthy,COVID-19,total_cells,patient_ids,N_COVID-19,N_healthy
+train,40,40,80,"['H2', 'H5', 'C1 B', 'C2']
+Categories (8, object): ['C1 A', 'C1 B', 'C2', 'C5', 'H1', 'H2', 'H5', 'H6']",2,2
+test,40,40,80,"['H1', 'C1 A', 'H6', 'C5']
+Categories (8, object): ['C1 A', 'C1 B', 'C2', 'C5', 'H1', 'H2', 'H5', 'H6']",2,2

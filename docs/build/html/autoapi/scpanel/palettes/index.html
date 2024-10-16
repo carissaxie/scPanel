@@ -1,0 +1,236 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>scpanel.palettes &mdash; scPanel 0.1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=fd3f3429" />
+
+  
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=01f34227"></script>
+      <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="scpanel.select_cell" href="../select_cell/index.html" />
+    <link rel="prev" title="scpanel.SVMRFECV" href="../SVMRFECV/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            scPanel
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">API Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">scpanel</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../GATclassifier/index.html">scpanel.GATclassifier</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../SVMRFECV/index.html">scpanel.SVMRFECV</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">scpanel.palettes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../select_cell/index.html">scpanel.select_cell</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../select_gene/index.html">scpanel.select_gene</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../settings/index.html">scpanel.settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../split_patient/index.html">scpanel.split_patient</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../train/index.html">scpanel.train</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../utils_func/index.html">scpanel.utils_func</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">scPanel</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">API Reference</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">scpanel</a></li>
+      <li class="breadcrumb-item active">scpanel.palettes</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/autoapi/scpanel/palettes/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-scpanel.palettes">
+<span id="scpanel-palettes"></span><h1>scpanel.palettes<a class="headerlink" href="#module-scpanel.palettes" title="Link to this heading"></a></h1>
+<p>Color palettes in addition to matplotlib’s palettes.</p>
+<section id="attributes">
+<h2>Attributes<a class="headerlink" href="#attributes" title="Link to this heading"></a></h2>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#scpanel.palettes.tab10" title="scpanel.palettes.tab10"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tab10</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#scpanel.palettes.vega_10" title="scpanel.palettes.vega_10"><code class="xref py py-obj docutils literal notranslate"><span class="pre">vega_10</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#scpanel.palettes.vega_10_scanpy" title="scpanel.palettes.vega_10_scanpy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">vega_10_scanpy</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#scpanel.palettes.vega_20" title="scpanel.palettes.vega_20"><code class="xref py py-obj docutils literal notranslate"><span class="pre">vega_20</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#scpanel.palettes.vega_20_scanpy" title="scpanel.palettes.vega_20_scanpy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">vega_20_scanpy</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#scpanel.palettes.default_20" title="scpanel.palettes.default_20"><code class="xref py py-obj docutils literal notranslate"><span class="pre">default_20</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#scpanel.palettes.zeileis_28" title="scpanel.palettes.zeileis_28"><code class="xref py py-obj docutils literal notranslate"><span class="pre">zeileis_28</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#scpanel.palettes.default_28" title="scpanel.palettes.default_28"><code class="xref py py-obj docutils literal notranslate"><span class="pre">default_28</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#scpanel.palettes.godsnot_102" title="scpanel.palettes.godsnot_102"><code class="xref py py-obj docutils literal notranslate"><span class="pre">godsnot_102</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#scpanel.palettes.default_102" title="scpanel.palettes.default_102"><code class="xref py py-obj docutils literal notranslate"><span class="pre">default_102</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Link to this heading"></a></h2>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#scpanel.palettes._plot_color_cycle" title="scpanel.palettes._plot_color_cycle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">_plot_color_cycle</span></code></a>(clists)</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading"></a></h2>
+<dl class="py data">
+<dt class="sig sig-object py" id="scpanel.palettes.tab10">
+<span class="sig-prename descclassname"><span class="pre">scpanel.palettes.</span></span><span class="sig-name descname"><span class="pre">tab10</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['#1f77b4',</span> <span class="pre">'#ff7f0e',</span> <span class="pre">'#2ca02c',</span> <span class="pre">'#d62728',</span> <span class="pre">'#9467bd',</span> <span class="pre">'#8c564b',</span> <span class="pre">'#e377c2',</span> <span class="pre">'#7f7f7f',...</span></em><a class="headerlink" href="#scpanel.palettes.tab10" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="scpanel.palettes.vega_10">
+<span class="sig-prename descclassname"><span class="pre">scpanel.palettes.</span></span><span class="sig-name descname"><span class="pre">vega_10</span></span><a class="headerlink" href="#scpanel.palettes.vega_10" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="scpanel.palettes.vega_10_scanpy">
+<span class="sig-prename descclassname"><span class="pre">scpanel.palettes.</span></span><span class="sig-name descname"><span class="pre">vega_10_scanpy</span></span><a class="headerlink" href="#scpanel.palettes.vega_10_scanpy" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="scpanel.palettes.vega_20">
+<span class="sig-prename descclassname"><span class="pre">scpanel.palettes.</span></span><span class="sig-name descname"><span class="pre">vega_20</span></span><a class="headerlink" href="#scpanel.palettes.vega_20" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="scpanel.palettes.vega_20_scanpy">
+<span class="sig-prename descclassname"><span class="pre">scpanel.palettes.</span></span><span class="sig-name descname"><span class="pre">vega_20_scanpy</span></span><a class="headerlink" href="#scpanel.palettes.vega_20_scanpy" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="scpanel.palettes.default_20">
+<span class="sig-prename descclassname"><span class="pre">scpanel.palettes.</span></span><span class="sig-name descname"><span class="pre">default_20</span></span><a class="headerlink" href="#scpanel.palettes.default_20" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="scpanel.palettes.zeileis_28">
+<span class="sig-prename descclassname"><span class="pre">scpanel.palettes.</span></span><span class="sig-name descname"><span class="pre">zeileis_28</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['#023fa5',</span> <span class="pre">'#7d87b9',</span> <span class="pre">'#bec1d4',</span> <span class="pre">'#d6bcc0',</span> <span class="pre">'#bb7784',</span> <span class="pre">'#8e063b',</span> <span class="pre">'#4a6fe3',</span> <span class="pre">'#8595e1',...</span></em><a class="headerlink" href="#scpanel.palettes.zeileis_28" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="scpanel.palettes.default_28">
+<span class="sig-prename descclassname"><span class="pre">scpanel.palettes.</span></span><span class="sig-name descname"><span class="pre">default_28</span></span><a class="headerlink" href="#scpanel.palettes.default_28" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="scpanel.palettes.godsnot_102">
+<span class="sig-prename descclassname"><span class="pre">scpanel.palettes.</span></span><span class="sig-name descname"><span class="pre">godsnot_102</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['#FFFF00',</span> <span class="pre">'#1CE6FF',</span> <span class="pre">'#FF34FF',</span> <span class="pre">'#FF4A46',</span> <span class="pre">'#008941',</span> <span class="pre">'#006FA6',</span> <span class="pre">'#A30059',</span> <span class="pre">'#FFDBE5',...</span></em><a class="headerlink" href="#scpanel.palettes.godsnot_102" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="scpanel.palettes.default_102">
+<span class="sig-prename descclassname"><span class="pre">scpanel.palettes.</span></span><span class="sig-name descname"><span class="pre">default_102</span></span><a class="headerlink" href="#scpanel.palettes.default_102" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="scpanel.palettes._plot_color_cycle">
+<span class="sig-prename descclassname"><span class="pre">scpanel.palettes.</span></span><span class="sig-name descname"><span class="pre">_plot_color_cycle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">clists</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Mapping</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Sequence</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scpanel.palettes._plot_color_cycle" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../SVMRFECV/index.html" class="btn btn-neutral float-left" title="scpanel.SVMRFECV" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../select_cell/index.html" class="btn btn-neutral float-right" title="scpanel.select_cell" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Yi Carissa Xie.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

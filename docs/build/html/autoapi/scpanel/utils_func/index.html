@@ -1,0 +1,213 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>scpanel.utils_func &mdash; scPanel 0.1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=fd3f3429" />
+
+  
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=01f34227"></script>
+      <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="prev" title="scpanel.train" href="../train/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            scPanel
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">API Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">scpanel</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../GATclassifier/index.html">scpanel.GATclassifier</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../SVMRFECV/index.html">scpanel.SVMRFECV</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../palettes/index.html">scpanel.palettes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../select_cell/index.html">scpanel.select_cell</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../select_gene/index.html">scpanel.select_gene</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../settings/index.html">scpanel.settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../split_patient/index.html">scpanel.split_patient</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../train/index.html">scpanel.train</a></li>
+<li class="toctree-l4 current"><a class="current reference internal" href="#">scpanel.utils_func</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">scPanel</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">API Reference</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">scpanel</a></li>
+      <li class="breadcrumb-item active">scpanel.utils_func</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/autoapi/scpanel/utils_func/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-scpanel.utils_func">
+<span id="scpanel-utils-func"></span><h1>scpanel.utils_func<a class="headerlink" href="#module-scpanel.utils_func" title="Link to this heading"></a></h1>
+<section id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Link to this heading"></a></h2>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#scpanel.utils_func.preprocess" title="scpanel.utils_func.preprocess"><code class="xref py py-obj docutils literal notranslate"><span class="pre">preprocess</span></code></a>(→ anndata._core.anndata.AnnData)</p></td>
+<td><p>standardize input data</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#scpanel.utils_func.get_X_y_from_ann" title="scpanel.utils_func.get_X_y_from_ann"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_X_y_from_ann</span></code></a>(→ Union[Tuple[numpy.ndarray, ...)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#scpanel.utils_func.check_nonnegative_integers" title="scpanel.utils_func.check_nonnegative_integers"><code class="xref py py-obj docutils literal notranslate"><span class="pre">check_nonnegative_integers</span></code></a>(→ bool)</p></td>
+<td><p>Checks values of X to ensure it is count data</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#scpanel.utils_func.check_nonnegative_float" title="scpanel.utils_func.check_nonnegative_float"><code class="xref py py-obj docutils literal notranslate"><span class="pre">check_nonnegative_float</span></code></a>(→ bool)</p></td>
+<td><p>Checks values of X to ensure it is logcount data</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#scpanel.utils_func.compute_cell_weight" title="scpanel.utils_func.compute_cell_weight"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compute_cell_weight</span></code></a>(→ numpy.ndarray)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#scpanel.utils_func.downsample_adata" title="scpanel.utils_func.downsample_adata"><code class="xref py py-obj docutils literal notranslate"><span class="pre">downsample_adata</span></code></a>(adata[, downsample_size, random_state])</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="scpanel.utils_func.preprocess">
+<span class="sig-prename descclassname"><span class="pre">scpanel.utils_func.</span></span><span class="sig-name descname"><span class="pre">preprocess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">adata</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">object</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">integrated</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ct_col</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_col</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pt_col</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">class_map</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">anndata._core.anndata.AnnData</span></span></span><a class="headerlink" href="#scpanel.utils_func.preprocess" title="Link to this definition"></a></dt>
+<dd><p>standardize input data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>adata</strong> (<em>object</em>)</p></li>
+<li><p><strong>integrated</strong> (<em>bool=False</em>)</p></li>
+<li><p><strong>ct_col</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em><em>=None</em>)</p></li>
+<li><p><strong>y_col</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em><em>=None</em>)</p></li>
+<li><p><strong>pt_col</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em><em>=None</em>)</p></li>
+<li><p><strong>class_map</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>int</em><em>]</em><em>]</em><em>=None</em>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>AnnData</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="scpanel.utils_func.get_X_y_from_ann">
+<span class="sig-prename descclassname"><span class="pre">scpanel.utils_func.</span></span><span class="sig-name descname"><span class="pre">get_X_y_from_ann</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">adata</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">anndata._core.anndata.AnnData</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_adj</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_neigh</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">pandas.core.arrays.categorical.Categorical</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">numpy.ndarray</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">pandas.core.arrays.categorical.Categorical</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">scipy.sparse._csr.csr_matrix</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#scpanel.utils_func.get_X_y_from_ann" title="Link to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>adata</strong></p></li>
+<li><p><strong>return_adj</strong></p></li>
+<li><p><strong>n_neigh</strong></p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="scpanel.utils_func.check_nonnegative_integers">
+<span class="sig-prename descclassname"><span class="pre">scpanel.utils_func.</span></span><span class="sig-name descname"><span class="pre">check_nonnegative_integers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">scipy.sparse.spmatrix</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#scpanel.utils_func.check_nonnegative_integers" title="Link to this definition"></a></dt>
+<dd><p>Checks values of X to ensure it is count data</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="scpanel.utils_func.check_nonnegative_float">
+<span class="sig-prename descclassname"><span class="pre">scpanel.utils_func.</span></span><span class="sig-name descname"><span class="pre">check_nonnegative_float</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">numpy.ndarray</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">scipy.sparse.spmatrix</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#scpanel.utils_func.check_nonnegative_float" title="Link to this definition"></a></dt>
+<dd><p>Checks values of X to ensure it is logcount data</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="scpanel.utils_func.compute_cell_weight">
+<span class="sig-prename descclassname"><span class="pre">scpanel.utils_func.</span></span><span class="sig-name descname"><span class="pre">compute_cell_weight</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">anndata._core.anndata.AnnData</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">pandas.core.frame.DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">numpy.ndarray</span></span></span><a class="headerlink" href="#scpanel.utils_func.compute_cell_weight" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="scpanel.utils_func.downsample_adata">
+<span class="sig-prename descclassname"><span class="pre">scpanel.utils_func.</span></span><span class="sig-name descname"><span class="pre">downsample_adata</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">adata</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">downsample_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">4000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">random_state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#scpanel.utils_func.downsample_adata" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../train/index.html" class="btn btn-neutral float-left" title="scpanel.train" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Yi Carissa Xie.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
