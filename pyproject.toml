@@ -43,7 +43,7 @@ sphinx-rtd-theme = "^3.0.1"
 [[tool.poetry.source]]
 name = "torch-wheels"
 url = "https://data.pyg.org/whl/torch-1.13.0+cpu.html"
-priority = "explicit"
+priority = "supplemental"
 
 
 [tool.isort]
