@@ -29,7 +29,8 @@ exclude_patterns = []
 
 autoapi_type = "python"
 autoapi_dirs = ["../../src"]
-
+autoapi_options = ["members"]
+autoapi_ignore = ["set_rcParams"]
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output

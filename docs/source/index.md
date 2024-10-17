@@ -9,6 +9,14 @@ Add your content using `reStructuredText` syntax. See the
 [reStructuredText](https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html)
 documentation for details.
 
+Description of Package
+
+Installation
+
+Basic Usage
+
+Links to Extended Tutorial
+
 ```{toctree}
 :caption: 'Contents:'
 :maxdepth: 2
