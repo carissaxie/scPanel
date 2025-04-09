@@ -2,41 +2,47 @@
 
 scPanel selects **a sparse gene panel** from responsive cell population(s) for **patient-level classification** in single cell RNA sequencing (**scRNA-seq**) data. 
 
-scPanel can give you:
+This repository is the official code implementation of the paper [scPanel: a tool for automatic identification of sparse gene panels for generalizable patient classification using scRNA-seq datasets](https://academic.oup.com/bib/article/25/6/bbae482/7796623), published in *Briefings in Bioinformatics*.
 
-- Cell populations that are responding to the perturbation (e.g. disease, drugs)
+### 🔬 Key Features
 
-- A minimal number of genes that can discriminate two differerent status in the selected cell population(s)
+- Identify **cell populations** that are responding to the perturbation (e.g. disease, drugs)
 
-- A classifier that can predict patients in two differerent status
+- Selects a **minimal set of genes** that can discriminate two different status in the selected cell population(s)
 
-Specifically, patients are splitted into training and testing set. In the training set, cell populations responsive to perturbations are scored by quantifying how well each cell populations are separeted between two conditions. With the selected population, Support Vector Machine Recursive Feature Elimination (*SVM*-*RFE*) is applied to identify a minimal number of genes with high predictive power. The number of genes in the panel is automatically decided in a data driven way to aviod bias from manual inspection. Using the selected cell population(s) and corresponding gene panel(s), scPanel constructs a patient-level classifier with the training data and evalute its performance in the testing data to validate the power of identified genes. All the data splitting involved in scPanel is done at patient-level so that the importance of selected cell population, genes and the performance of corresponding classifiers are genearalizable to all patients.
+- Trains **patient-level ML/DL classifier** that can predict patients in two different status
 
-## Why scPanel is better:
+Specifically, patients are split into training and testing sets. In the training set, cell populations responsive to perturbations are scored by quantifying how well each cell population is separated between two conditions. With the selected population, Support Vector Machine Recursive Feature Elimination (*SVM*-*RFE*) is applied to identify a minimal number of genes with high predictive power. The number of genes in the panel is automatically decided in a data-driven way to avoid bias from manual inspection. Using the selected cell population(s) and corresponding gene panel(s), scPanel constructs a patient-level classifier with the training data and evaluates its performance in the testing data to validate the power of identified genes. All the data splitting involved in scPanel is done at the patient level so that the importance of the selected cell population, genes, and the performance of corresponding classifiers are genearalizable to all patients.
 
-- Reduce the cost of sequencing with a small number of genes needed for assay
+### 💡 Why scPanel is better:
 
-- The number of genes in the panel is automatically decided in a data driven way
+- ⚡ **Cost-Effective**: Reduce the cost of sequencing with a small number of genes needed for assay
 
-- Genearalizable patient-level classification
+- 🛠️ **Automated**: The number of genes in the panel is automatically decided in a data-driven way
 
-- Compatible with Scanpy/Anndata framework
+- 🧠 **Generalizable**: Patient-level splitting ensures robust and transferable results
 
-# Documentation
-Update (23/08/2024)
-Documentation has been initialized and will be updated with more details soon. Check out the [scPanel documentation](https://scpanel.readthedocs.io/en/latest/autoapi/scpanel/index.html).
+- 🤖 **Deep Learning Enabled**: Supports advanced deep classifiers, i.e., Graph Attention Networks (GATs) for capturing robust gene representations.
 
-# Usage
+- 🔄 **Interoperable**: Fully compatible with Scanpy/Anndata framework
 
-scPanel is mainly composed of three steps:
+### ⚙️ Documentation
+Documentation is being actively updated. Check the current version (23/08/2024) here:   
+📘 [[scPanel Documentation]](https://scpanel.readthedocs.io/en/latest/autoapi/scpanel/index.html)
 
-1. idenitfy responsive cell population
+## 🧭 Method Overview
 
-2. identify a sparse gene panel
+scPanel follows a three-step pipeline:
 
-3. patient-level classification
+1. Identify responsive cell population
 
-## Input scRNA-seq data
+2. Identify a sparse gene panel
+
+3. Patient-level classification
+
+## 🧪 Usage
+
+### 🧬 Input scRNA-seq data
 
 1. Quality control and preprocess data using standard workflow.
 
@@ -44,7 +50,7 @@ scPanel is mainly composed of three steps:
 
 3. Input AnnData Object to scPanel.
 
-## Functions
+### 🚀 Functions in scPanel
 
 - `preprocess`(adata, ct_col, y_col, pt_col, class_map)
   
@@ -110,10 +116,21 @@ scPanel is mainly composed of three steps:
   
   - visualize the patient-level prediction
 
-# Citation
+## Citation
 
 If you use `scPanel` in your work, please cite the `scPanel` publication:
 
 Xie, Yi, et al. "scPanel: A tool for automatic identification of sparse gene panels for generalizable patient classification using scRNA-seq datasets." *bioRxiv* (2024): 2024-04.
 
-
+```
+@article{xie2024scpanel,
+  title={scPanel: a tool for automatic identification of sparse gene panels for generalizable patient classification using scRNA-seq datasets},
+  author={Xie, Yi and Yang, Jianfei and Ouyang, John F and Petretto, Enrico},
+  journal={Briefings in Bioinformatics},
+  volume={25},
+  number={6},
+  pages={bbae482},
+  year={2024},
+  publisher={Oxford University Press}
+}
+```
