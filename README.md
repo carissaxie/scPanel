@@ -12,19 +12,21 @@ This repository is the official code implementation of the paper [scPanel: a too
 
 - Trains **patient-level ML/DL classifier** that can predict patients in two different status
 
+![Framework Overview](./framework.png)
+
 Specifically, patients are split into training and testing sets. In the training set, cell populations responsive to perturbations are scored by quantifying how well each cell population is separated between two conditions. With the selected population, Support Vector Machine Recursive Feature Elimination (*SVM*-*RFE*) is applied to identify a minimal number of genes with high predictive power. The number of genes in the panel is automatically decided in a data-driven way to avoid bias from manual inspection. Using the selected cell population(s) and corresponding gene panel(s), scPanel constructs a patient-level classifier with the training data and evaluates its performance in the testing data to validate the power of identified genes. All the data splitting involved in scPanel is done at the patient level so that the importance of the selected cell population, genes, and the performance of corresponding classifiers are genearalizable to all patients.
 
 ### 💡 Why scPanel is better:
 
-- ⚡ **Cost-Effective**: Reduce the cost of sequencing with a small number of genes needed for assay
+- **Cost-Effective**: Reduces the cost of sequencing with a small number of genes needed for assay
 
-- 🛠️ **Automated**: The number of genes in the panel is automatically decided in a data-driven way
+- **Automated**: Decides the number of genes in the panel automatically in a data-driven manner
 
-- 🧍 **Generalizable**: Patient-level splitting ensures robust and transferable results
+- **Generalizable**: Ensures robust and transferable results by patient-level splitting and evaluation
 
-- 🤖 **Deep Learning Enabled**: Supports advanced deep classifiers, i.e., Graph Attention Networks (GATs) for capturing robust gene representations.
+- **Deep Learning Enabled**: Supports advanced deep classifiers, i.e., Graph Attention Networks (GATs), for capturing robust gene representations
 
-- 🔄 **Interoperable**: Fully compatible with Scanpy/Anndata framework
+- **Interoperable**: Fully compatible with Scanpy/Anndata framework
 
 ### ⚙️ Documentation
 Documentation is being actively updated. Check the current version (23/08/2024) here:   
@@ -40,9 +42,15 @@ scPanel follows a three-step pipeline:
 
 3. Patient-level classification
 
-![Framework Overview](./framework.png)
-
 ## Usage
+
+### 📦 Installation
+
+You can install `scPanel` directly via pip:
+
+```bash
+pip install scpanel
+```
 
 ### 🧬 Input scRNA-seq data
 
@@ -122,7 +130,7 @@ scPanel follows a three-step pipeline:
 
 If you use `scPanel` in your work, please cite the `scPanel` publication:
 
-Xie, Yi, et al. "scPanel: A tool for automatic identification of sparse gene panels for generalizable patient classification using scRNA-seq datasets." *bioRxiv* (2024): 2024-04.
+Xie, Yi, et al. "scPanel: a tool for automatic identification of sparse gene panels for generalizable patient classification using scRNA-seq datasets." Briefings in Bioinformatics 25.6 (2024): bbae482.
 
 ```
 @article{xie2024scpanel,
