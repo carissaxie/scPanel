@@ -20,7 +20,7 @@ Specifically, patients are split into training and testing sets. In the training
 
 - 🛠️ **Automated**: The number of genes in the panel is automatically decided in a data-driven way
 
-- 🧠 **Generalizable**: Patient-level splitting ensures robust and transferable results
+- 🧍 **Generalizable**: Patient-level splitting ensures robust and transferable results
 
 - 🤖 **Deep Learning Enabled**: Supports advanced deep classifiers, i.e., Graph Attention Networks (GATs) for capturing robust gene representations.
 
@@ -30,7 +30,7 @@ Specifically, patients are split into training and testing sets. In the training
 Documentation is being actively updated. Check the current version (23/08/2024) here:   
 📘 [[scPanel Documentation]](https://scpanel.readthedocs.io/en/latest/autoapi/scpanel/index.html)
 
-## 🧭 Method Overview
+## Method Overview
 
 scPanel follows a three-step pipeline:
 
@@ -40,7 +40,9 @@ scPanel follows a three-step pipeline:
 
 3. Patient-level classification
 
-## 🧪 Usage
+![Framework Overview](./framework.png)
+
+## Usage
 
 ### 🧬 Input scRNA-seq data
 
