@@ -6,11 +6,11 @@ This repository is the official code implementation of the paper [scPanel: a too
 
 ### 🔬 Key Features
 
-- Identify **cell populations** that are responding to the perturbation (e.g. disease, drugs)
+- Identify **cell populations** that are responding to the perturbation (e.g., disease, drugs)
 
 - Selects a **minimal set of genes** that can discriminate two different status in the selected cell population(s)
 
-- Trains **patient-level ML/DL classifier** that can predict patients in two different status
+- Trains **patient-level ML/DL classifiers** that can predict patients in two different status
 
 ![Framework Overview](./framework.png)
 
@@ -68,7 +68,7 @@ pip install scpanel
 
 - `split_train_test`(adata, out_dir, min_cells=20, min_samples=3, test_pt_size=0.2, random_state=3467, verbose=0)
   
-  - split patients into 1) training set for cell type selection, gene panel identification and classfiers training, 2) testing set to evalute the performance of classifiers and validate the predictive power of the gene panel.
+  - split patients into 1) training set for cell type selection, gene panel identification, and classifiers training, 2) testing set to evaluate the performance of classifiers and validate the predictive power of the gene panel.
 
 - `cell_type_score`(adata_train_dict, out_dir, ncpus, n_iterations, sample_n_cell, n_iterations=100, verbose=False)
   
@@ -112,7 +112,7 @@ pip install scpanel
 
 - `models_predict`(clfs, adata_test_final, out_dir=None)
   
-  - predict the probablities of cells in the testing set
+  - predict the probabilities of cells in the testing set
 
 - `pt_pred`(adata_test_final, cell_pred_col = 'median_pred_score', num_bootstrap=None)
   
